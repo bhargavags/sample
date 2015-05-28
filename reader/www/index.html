@@ -42,14 +42,25 @@
         <script type="text/javascript">
             app.initialize();
         </script> -->
-        <form>
-            First name:<br>
-            <input type="text" name="firstname">
-            <br>
-            Last name:<br>
-            <input type="text" name="lastname">
-            <br /> <br />
-            <input type="submit" value="Submit">
+        <form action="action_page.php">
+            <fieldset>
+                <legend>Personal information:</legend>
+                First name:<br>
+                <input type="text" name="firstname" value="Mickey">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname" value="Mouse">
+                <br><br>
+                <input type="submit" value="Submit">
+                <br><br>
+                <input type="radio" name="sex" value="male" checked>Male
+                <br>
+                <input type="radio" name="sex" value="female">Female
+                <br><br>
+                <input type="checkbox" name="vehicle" value="Bike">I have a bike
+                <br>
+                <input type="checkbox" name="vehicle" value="Car">I have a car 
+            </fieldset>
         </form>
 
     </body>
