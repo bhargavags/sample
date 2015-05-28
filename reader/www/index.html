@@ -26,11 +26,11 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />  
         <title>Hello World</title>
         <style>
             body {
-                background-color: lightgray;
+                background-color: white;
             }
 
             h1 {
@@ -54,28 +54,75 @@
         </script> -->
   <body>
   <h1>A simple form </h1>
-        <form action="action_page.php">
-            <fieldset>
-                <legend>Personal information:</legend>
-                First name:<br>
-                <input type="text" name="firstname" value="Mickey">
-                <br>
-                Last name:<br>
-                <input type="text" name="lastname" value="Mouse">
-                <br><br>
-              
-                <input type="radio" name="sex" value="male" checked>Male
-                <br>
-                <input type="radio" name="sex" value="female">Female
-                <br><br>
-                <input type="checkbox" name="vehicle" value="Bike">I have a bike
-                <br>
-                <input type="checkbox" name="vehicle" value="Car">I have a car 
-                <br>
-                <input type="submit" value="Submit">
-               
-            </fieldset>
-        </form>
+      <form>
+          <table>
+              <tr>
+                  <td>
+                      First Name:
+                  </td>
+                  <td>
+                      <input type="text" name="firstname" placeholder="Ex: Mosleh" />
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Last Name:
+                  </td>
+                  <td>
+                      <input type="text" name="lastname" placeholder="Ex: Uddin" />
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Email:
+                  </td>
+                  <td>
+                      <input type="email" name="email" placeholder="Ex: example@example.com" />
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Date of Birth:
+                  </td>
+                  <td>
+                      <input type="date" name="birthday" />
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Pick your lucky number:
+                  </td>
+                  <td>
+                      <input type="number" name="luckynumber" min="0" max="10" value="5" />
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Your Website:
+                  </td>
+                  <td>
+                      <input type="url" name="homepage" placeholder="Ex: www.findsourcecode.com" />
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Gender:
+                  </td>
+                  <td>
+                      <select name="gender">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="unknown">Don't wanna share</option>
+                      </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <input type="submit" />
+                  </td>
+              </tr>
+          </table>
+      </form>
 
     </body>
 </html>
