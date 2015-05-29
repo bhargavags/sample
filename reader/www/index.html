@@ -1,129 +1,133 @@
-﻿  <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        
-        <title>Hello</title>
-        <style>
-            body {
-                background-color: white;
-            }
-
-            h1 {
-                color: blue;
-            }
-        </style>
-
-    </head>
- 
-      <!--  <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">testsample</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script> -->
-  <body>
-  <h1>A simple form </h1>
-      <form>
-          <table>
-              <tr>
-                  <td>
-                      First Name:
-                  </td>
-                  <td>
-                      <input type="text" name="firstname" placeholder="firstname" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Last Name:
-                  </td>
-                  <td>
-                      <input type="text" name="lastname" placeholder="lastname" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Email:
-                  </td>
-                  <td>
-                      <input type="email" name="email" placeholder="Ex: example@example.com" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Date of Birth:
-                  </td>
-                  <td>
-                      <input type="date" name="birthday" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Pick your lucky number:
-                  </td>
-                  <td>
-                      <input type="number" name="luckynumber" min="0" max="10" value="5" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Your Website:
-                  </td>
-                  <td>
-                      <input type="url" name="homepage" placeholder=" www.findsourcecode.com" />
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Gender:
-                  </td>
-                  <td>
-                      <select name="gender">
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                          <option value="unknown">Don't wanna share</option>
-                      </select>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <input type="submit" />
-                  </td>
-              </tr>
-          </table>
-      </form>
-
-    </body>
-</html> 
-     
+<head>
+<title>Html5 Form Validation</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript">
+		H5F.listen(window,"load",function () {
+			H5F.setup(document.getElementById("signup"));
+		},false);
+	</script>
+</head>
+<body>
+ <form id="signup">
+  <h1>HTML5 Form Validation</h1>
+  <h2>Fields marked (*) are required</h2>
+  <fieldset>
+   <legend>Input Text Field Validation</legend>
+   <ol>
+    <li>
+     <label for="firstname">First Name *</label> 
+     <input type="text" id="firstname" name="firstname" placeholder="First Name" required />
+    </li>
+    <li>
+    <label for="lastname">Last Name *</label> 
+    <input type="text" id="lastname" name="lastname" placeholder="Last Name" required />
+    </li>
+   </ol>
+  </fieldset>
+  <fieldset>
+   <legend>Email and URL Validation</legend>
+   <ol>
+    <li>
+     <label for="email">Email *</label> 
+     <input type="email" id="email" name="email" placeholder="e.g. swapnil@example.com" title="Please enter a valid email" required />
+     <p class="validation01">
+      <span class="invalid">Please enter a valid email address e.g. swapnil@example.com</span>
+      <span class="valid">Your email address is now valid</span>
+     </p>
+    </li>
+    <li>
+     <label for="url">Website *</label> 
+     <input type="url" name="url" id="url" placeholder="e.g. http://www.html5andcss3.org" title="Please enter a valid URL" required />
+     <p class="validation01">
+      <span class="invalid">Please enter a valid URL address e.g. http://www.html5andcss3.org</span>
+      <span class="valid">Your URL address is now valid</span>
+     </p>
+    </li>
+   </ol>
+  </fieldset>	
+  <fieldset>
+   <legend>Mobile or Phone Number Validation</legend>
+   <ol>
+    <li>
+     <label for="tel">Mobile *</label> 
+     <input type="tel" id="tel" name="tel" pattern="\d{10}" placeholder="Please enter a ten digit phone number" required />
+     <p class="validation01">
+      <span class="invalid">No spaces or brackets e.g. 9999999999</span>
+      <span class="valid">Your mobile number is valid</span>
+     </p>
+    </li>
+   </ol>
+  </fieldset>
+  <fieldset>
+   <legend>Drop Down Box Validation</legend>
+   <ol>
+    <li>
+     <label for="state">Country</label>
+     <select name="state" id="state">
+      <option>Africa</option>
+      <option>America</option>
+      <option>Australia</option>
+      <option>China</option>
+      <option>England</option>
+      <option>Japan</option>
+      <option selected>India</option>
+      <option>Indonesia</option>
+     </select>
+    </li>
+   </ol>
+  </fieldset>
+  <fieldset>
+   <legend>Number Validation With Specific Range</legend>
+   <ol>		   
+    <li>
+     <label for="postcode">Post code *</label>
+     <input id="postcode" name="postcode" type="number" min="10001" max="999999" maxlength="6" required />
+     <p class="validation01">
+      <span class="invalid">Your postcode is out of range between 10001 - 999999</span>
+       <span class="valid">Your postcode is in the correct range</span>
+     </p>
+    </li>
+   </ol>
+  </fieldset>
+  <fieldset>
+   <legend>Textarea Validation</legend>
+   <ol>		   			
+    <li>
+     <label for="address">Address *</label>
+     <textarea id="address" name="address" type="text" required></textarea>
+    </li>
+   </ol>
+  </fieldset>
+  <fieldset>
+   <legend>CheckBox and Radio Button Validation</legend>
+   <ol>		
+    <li>
+     <label for="username">Agree to T & C *</label>
+     <input id="checkbox" name="checkbox" type="checkbox" required />
+    </li>
+    <li>
+     <label for="username">General *</label>
+     <input id="radio" name="radio" type="radio" required />Male <input id="radio" name="radio" type="radio" required />Female
+    </li>				
+   </ol>
+  </fieldset>
+  <fieldset>
+   <legend>Password Validation Using Pattern</legend>
+   <ol>						
+    <li>
+     <label for="password">Password *</label>
+     <input id="password" name="password" type="password" title="Minimum 8 characters, one number, one uppercase and one lowercase letter" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" required /> 
+     <p class="validation01">
+      <span class="invalid">Minimum 8 characters, one number, one uppercase letter and one lowercase letter</span>
+      <span class="valid">Your password meets our requirements, thank you.</span>
+     </p>
+    </li>
+   </ol>
+  </fieldset>
+  <input type="submit" value="Sign up" />
+ </form>
+</body>
+</html>
